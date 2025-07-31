@@ -25,6 +25,9 @@ if __name__ == "__main__":
     workbook_file_path = config_paths["workbook"]
     output_dir = config_paths["outputDir"]
 
+    # 存在チェック
+    check_paths([dat_dir, workbook_file_path])
+
     # datファイルとExcelシートの紐づけ
     dat_sheet_pairs: list[DatSheetInfo] = []
     for dat_name, sheet_name in config_dat_sheet_pairs.items():
